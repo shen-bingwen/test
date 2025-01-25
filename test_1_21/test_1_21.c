@@ -119,30 +119,30 @@
 
 // 汉诺塔问题
 // 起始位置  中转位置 目标位置
-// void hanoi(int n, char source, char auxiliary, char destination)
-// {
-//     if (n == 1)
-//     {
-//         printf("Move disk  %d from %c to %c\n", n, source, destination);
-//     }
-//     else
-//     {
-//         // 将n-1个圆盘从源柱子移动到辅助柱子,B柱是中转变量.
-//         hanoi(n - 1, source, destination, auxiliary);
-//         // 将第n个圆盘从源柱子移动到目标柱子
-//         printf("Move disk  %d from %c to %c\n", n, source, destination);
-//         //// 将n-1个圆盘从此时的起始柱子(B)辅助柱子(A)移动到目标柱子(C)
-//         hanoi(n - 1, auxiliary, source, destination);
-//     }
-// }
-// int main()
-// {
-//     int n = 0;
-//     printf("请输入飞盘数量:>");
-//     scanf("%d", &n);
-//     hanoi(n, 'A', 'B', 'C');
-//     return 0;
-// }
+void hanoi(int n, char source, char auxiliary, char destination)
+{
+    if (n == 1)
+    {
+        printf("Move disk  %d from %c to %c\n", n, source, destination);
+     }
+    else
+    {
+        // 将n-1个圆盘从源柱子移动到辅助柱子,B柱是中转变量.
+        hanoi(n - 1, source, destination, auxiliary);
+        // 将第n个圆盘从源柱子移动到目标柱子
+        printf("Move disk  %d from %c to %c\n", n, source, destination);
+        //// 将n-1个圆盘从此时的起始柱子(B)辅助柱子(A)移动到目标柱子(C)
+        hanoi(n - 1, auxiliary, source, destination);
+    }
+ }
+int main()
+{
+    int n = 0;
+    printf("请输入飞盘数量:>");
+    scanf("%d", &n);
+    hanoi(n, 'A', 'B', 'C');
+    return 0;
+}
 
 // 青蛙跳台阶 动态规划:用上一步的结果来快速推算得到下一步的结果(斐波那契数列)
 // 递归的话到50太久了
