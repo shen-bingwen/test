@@ -58,7 +58,6 @@ void game()
            printf("平局\n");
         }
 }
-
 void test()
 {
     int input = 0;
