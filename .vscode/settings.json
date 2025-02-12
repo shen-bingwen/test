@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "add.h": "c"
-    }
+        "add.h": "c",
+        "game.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
