@@ -1,0 +1,16 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/abing/Desktop/Code/test_2_7/test_2_7'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _InitBoard, symObjAddr: 0x0, symBinAddr: 0x100000600, symSize: 0x80 }
+  - { offset: 0x54, size: 0x8, addend: 0x0, symName: _InitBoard, symObjAddr: 0x0, symBinAddr: 0x100000600, symSize: 0x80 }
+  - { offset: 0xB0, size: 0x8, addend: 0x0, symName: _DisplayBoard, symObjAddr: 0x80, symBinAddr: 0x100000680, symSize: 0x140 }
+  - { offset: 0x11A, size: 0x8, addend: 0x0, symName: _PlayerMove, symObjAddr: 0x1C0, symBinAddr: 0x1000007C0, symSize: 0x100 }
+  - { offset: 0x176, size: 0x8, addend: 0x0, symName: _ComputerBoard, symObjAddr: 0x2C0, symBinAddr: 0x1000008C0, symSize: 0x90 }
+  - { offset: 0x1D2, size: 0x8, addend: 0x0, symName: _IsWIn, symObjAddr: 0x350, symBinAddr: 0x100000950, symSize: 0x240 }
+  - { offset: 0x232, size: 0x8, addend: 0x0, symName: _IsFull, symObjAddr: 0x590, symBinAddr: 0x100000B90, symSize: 0xA0 }
+  - { offset: 0x292, size: 0x8, addend: 0x0, symName: _menu, symObjAddr: 0x630, symBinAddr: 0x100000C30, symSize: 0x30 }
+  - { offset: 0x2A7, size: 0x8, addend: 0x0, symName: _game, symObjAddr: 0x660, symBinAddr: 0x100000C60, symSize: 0x150 }
+  - { offset: 0x2D9, size: 0x8, addend: 0x0, symName: _test, symObjAddr: 0x7B0, symBinAddr: 0x100000DB0, symSize: 0xA0 }
+  - { offset: 0x2FD, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x850, symBinAddr: 0x100000E50, symSize: 0x1C }
+...
