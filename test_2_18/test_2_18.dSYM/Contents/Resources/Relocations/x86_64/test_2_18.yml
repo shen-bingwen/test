@@ -1,0 +1,16 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/abing/Desktop/Code/test_2_18/test_2_18'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _InitBoard, symObjAddr: 0x0, symBinAddr: 0x1000006A0, symSize: 0x90 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _InitBoard, symObjAddr: 0x0, symBinAddr: 0x1000006A0, symSize: 0x90 }
+  - { offset: 0xB2, size: 0x8, addend: 0x0, symName: _Displayboard, symObjAddr: 0x90, symBinAddr: 0x100000730, symSize: 0xF0 }
+  - { offset: 0x10E, size: 0x8, addend: 0x0, symName: _Setmine, symObjAddr: 0x180, symBinAddr: 0x100000820, symSize: 0xA0 }
+  - { offset: 0x178, size: 0x8, addend: 0x0, symName: _get_mine_count, symObjAddr: 0x220, symBinAddr: 0x1000008C0, symSize: 0x120 }
+  - { offset: 0x1BC, size: 0x8, addend: 0x0, symName: _chain_reflect, symObjAddr: 0x340, symBinAddr: 0x1000009E0, symSize: 0x160 }
+  - { offset: 0x25E, size: 0x8, addend: 0x0, symName: _FindMine, symObjAddr: 0x4A0, symBinAddr: 0x100000B40, symSize: 0x150 }
+  - { offset: 0x2D6, size: 0x8, addend: 0x0, symName: _menu, symObjAddr: 0x5F0, symBinAddr: 0x100000C90, symSize: 0x40 }
+  - { offset: 0x2EB, size: 0x8, addend: 0x0, symName: _game, symObjAddr: 0x630, symBinAddr: 0x100000CD0, symSize: 0xD0 }
+  - { offset: 0x31E, size: 0x8, addend: 0x0, symName: _test, symObjAddr: 0x700, symBinAddr: 0x100000DA0, symSize: 0xB0 }
+  - { offset: 0x342, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x7B0, symBinAddr: 0x100000E50, symSize: 0x1C }
+...
