@@ -2,7 +2,9 @@
     "files.associations": {
         "stdio.h": "c",
         "add.h": "c",
-        "game.h": "c"
+        "game.h": "c",
+        "__locale": "c",
+        "typeinfo": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
