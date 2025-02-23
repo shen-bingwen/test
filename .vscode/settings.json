@@ -4,7 +4,9 @@
         "add.h": "c",
         "game.h": "c",
         "__locale": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "bitset": "c",
+        "unordered_map": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
