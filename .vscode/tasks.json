@@ -8,8 +8,7 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
-                "${file}",
-                // "add.c",
+                "${file}", 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
