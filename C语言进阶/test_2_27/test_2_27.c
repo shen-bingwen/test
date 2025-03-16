@@ -647,6 +647,7 @@ void bubble_sort(void *base, int sz, int width, int (*cmp)(const void *e1, const
         // 每一趟比较的对数
         for (j = 0; j < sz - 1 - i; j++)
         {
+            //相邻两个元素的比较
             if (cmp((char *)base + j * width, (char *)base + (j + 1) * width) > 0)
             {
                 Swap((char *)base + j * width, (char *)base + (j + 1) * width, width);
