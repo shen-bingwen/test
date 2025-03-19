@@ -1,0 +1,7 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     "/Users/abing/Desktop/Code/C语言进阶/test_3_16/test_3_16"
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100000F00, symSize: 0x92 }
+  - { offset: 0x79, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100000F00, symSize: 0x92 }
+...
