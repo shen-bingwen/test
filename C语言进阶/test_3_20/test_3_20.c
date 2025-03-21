@@ -221,9 +221,8 @@
 //     return 0;
 // }
 
-
 // sscanf,是从字符串中读取格式化的数据.
-//sprintf,是把格式化的数据输出成(存储到)字符串
+// sprintf,是把格式化的数据输出成(存储到)字符串
 // struct S
 // {
 //     int n;
@@ -245,30 +244,48 @@
 //     return 0;
 // }
 
+// 二进制的形式读写
+//  struct S{
+//      char name[20];
+//      int age;
+//      double score;
+//  };
+//  int main(){
+//      // struct S s={"张三",20,55.6};
+//      struct S tmp={0};
+//      // FILE* pf=fopen("text.txt","wb");
+//      FILE* pf=fopen("text.txt","rb");
+//      if (pf==NULL)
+//      {
+//          printf("%s\n",strerror(errno));
+//          return 0;
+//      }
+//      //写文件 从内存写到磁盘上文件,以二进制形式 第一个值是要写入参数值的地址,第二个参数是写入类型的大小,第三个是写入的个数,第4个值是从写入哪里
+//      // fwrite(&s,sizeof(struct S),1,pf);
+//      fread(&tmp,sizeof(struct S),1,pf);
+//      printf("%s %d %lf\n",tmp.name,tmp.age,tmp.score);
+//      //关闭文件
+//      fclose(pf);
+//      pf=NULL;
+//      return 0;
+//  }
 
-//二进制的形式读写
-struct S{
-    char name[20];
-    int age;
-    double score;
-};
-int main(){
-    // struct S s={"张三",20,55.6};
-    struct S tmp={0};
-    // FILE* pf=fopen("text.txt","wb");
-    FILE* pf=fopen("text.txt","rb");
-    if (pf==NULL)
+// fseek
+int main()
+{
+    FILE *pf = fopen("text.txt", "rb");
+    if (pf == NULL)
     {
-        printf("%s\n",strerror(errno));
         return 0;
     }
-    //写文件 从内存写到磁盘上文件,以二进制形式 第一个值是要写入参数值的地址,第二个参数是写入类型的大小,第三个是写入的个数,第4个值是从写入哪里
-    // fwrite(&s,sizeof(struct S),1,pf);
-    fread(&tmp,sizeof(struct S),1,pf);
-    printf("%s %d %lf\n",tmp.name,tmp.age,tmp.score);
-    //关闭文件
+    // 1.定位文件指针
+    fseek(pf, -2, SEEK_END);
+    // fseek(pf, 2, SEEK_SET); //从起始位置读
+    // fseek(pf, 4, SEEK_CUR);//从当前位置读
+    // 2.读取文件
+    int ch = fgetc(pf);
+    printf("%c\n", ch);
+
     fclose(pf);
-    pf=NULL;
-    
-    return 0;
+    pf = NULL;
 }
