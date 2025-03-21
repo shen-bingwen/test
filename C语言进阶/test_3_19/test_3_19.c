@@ -43,7 +43,7 @@ void test()
             break;
         case EXIT:
             // 销毁通讯录-释放动态开辟的内存
-            DestroyContact(&con);
+            DestoryContact(&con);
             break;
         default:
             printf("选择错误,请重新选择\n");
