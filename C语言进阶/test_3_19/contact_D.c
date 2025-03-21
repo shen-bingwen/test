@@ -196,7 +196,7 @@ void SortContact(struct Contact *ps)
 }
 
 
-void DestoryContact(Contact* ps){
+void DestroyContact(Contact* ps){
     free(ps->data);
     ps->data=NULL;
 }

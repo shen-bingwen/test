@@ -48,7 +48,7 @@ void ModifyContact(struct Contact* ps);
 //对通讯录中的信息进行排序
 void SortContact(struct Contact* ps);
 //销毁通讯录
-void DestoryContact(Contact* ps);
+void DestroyContact(Contact* ps);
 
 
 
