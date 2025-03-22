@@ -1,0 +1,22 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     "/Users/abing/Desktop/Code/C语言进阶/test_3_21/test_3_21"
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _InitContact, symObjAddr: 0x0, symBinAddr: 0x100001180, symSize: 0x50 }
+  - { offset: 0xF5, size: 0x8, addend: 0x0, symName: _InitContact, symObjAddr: 0x0, symBinAddr: 0x100001180, symSize: 0x50 }
+  - { offset: 0x119, size: 0x8, addend: 0x0, symName: _CheckCapacity, symObjAddr: 0x50, symBinAddr: 0x1000011D0, symSize: 0x90 }
+  - { offset: 0x159, size: 0x8, addend: 0x0, symName: _AddContact, symObjAddr: 0xE0, symBinAddr: 0x100001260, symSize: 0x140 }
+  - { offset: 0x17D, size: 0x8, addend: 0x0, symName: _ShowContact, symObjAddr: 0x220, symBinAddr: 0x1000013A0, symSize: 0x110 }
+  - { offset: 0x1BD, size: 0x8, addend: 0x0, symName: _DelcContact, symObjAddr: 0x330, symBinAddr: 0x1000014B0, symSize: 0x110 }
+  - { offset: 0x219, size: 0x8, addend: 0x0, symName: _FindByName, symObjAddr: 0x440, symBinAddr: 0x1000015C0, symSize: 0x90 }
+  - { offset: 0x25D, size: 0x8, addend: 0x0, symName: _SearchContact, symObjAddr: 0x4D0, symBinAddr: 0x100001650, symSize: 0x140 }
+  - { offset: 0x29D, size: 0x8, addend: 0x0, symName: _ModifyContact, symObjAddr: 0x610, symBinAddr: 0x100001790, symSize: 0x1A0 }
+  - { offset: 0x2DD, size: 0x8, addend: 0x0, symName: _Swap, symObjAddr: 0x7B0, symBinAddr: 0x100001930, symSize: 0x70 }
+  - { offset: 0x347, size: 0x8, addend: 0x0, symName: _bubble_sort, symObjAddr: 0x820, symBinAddr: 0x1000019A0, symSize: 0xF0 }
+  - { offset: 0x3BF, size: 0x8, addend: 0x0, symName: _cmp_by_name, symObjAddr: 0x910, symBinAddr: 0x100001A90, symSize: 0x30 }
+  - { offset: 0x3F5, size: 0x8, addend: 0x0, symName: _SortContact, symObjAddr: 0x940, symBinAddr: 0x100001AC0, symSize: 0x40 }
+  - { offset: 0x419, size: 0x8, addend: 0x0, symName: _DestroyContact, symObjAddr: 0x980, symBinAddr: 0x100001B00, symSize: 0x30 }
+  - { offset: 0x43D, size: 0x8, addend: 0x0, symName: _menu, symObjAddr: 0x9B0, symBinAddr: 0x100001B30, symSize: 0x70 }
+  - { offset: 0x452, size: 0x8, addend: 0x0, symName: _test, symObjAddr: 0xA20, symBinAddr: 0x100001BA0, symSize: 0x110 }
+  - { offset: 0x484, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xB30, symBinAddr: 0x100001CB0, symSize: 0x1C }
+...
