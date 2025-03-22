@@ -271,21 +271,142 @@
 //  }
 
 // fseek
-int main()
-{
-    FILE *pf = fopen("text.txt", "rb");
-    if (pf == NULL)
-    {
-        return 0;
-    }
-    // 1.定位文件指针
-    fseek(pf, -2, SEEK_END);
-    // fseek(pf, 2, SEEK_SET); //从起始位置读
-    // fseek(pf, 4, SEEK_CUR);//从当前位置读
-    // 2.读取文件
-    int ch = fgetc(pf);
-    printf("%c\n", ch);
+// int main()
+// {
+//     FILE *pf = fopen("text.txt", "rb");
+//     if (pf == NULL)
+//     {
+//         return 0;
+//     }
+//     // 1.定位文件指针
+//     fseek(pf, -2, SEEK_END);
+//     // fseek(pf, 2, SEEK_SET); //从起始位置读
+//     // fseek(pf, 4, SEEK_CUR);//从当前位置读
+//     // 2.读取文件
+//     int ch = fgetc(pf);
+//     printf("%c\n", ch);
 
-    fclose(pf);
-    pf = NULL;
+//     fclose(pf);
+//     pf = NULL;
+// }
+
+// int main()
+// {
+//     FILE *pf = fopen("text.txt", "rb");
+//     if (pf == NULL)
+//     {
+//         return 0;
+//     }
+//     // 1.定位文件指针
+//     // fseek(pf, -2, SEEK_END);
+
+//     int ch=fgetc(pf);
+//     ch=fgetc(pf);
+//     printf("%c\n",ch);
+
+//     //ftell文件指针相当于起始位置的偏移量,返回类型是int
+//     fgetc(pf);//假设去pf里面读相当于文件指针向后偏移了一个
+//     // int pos=ftell(pf);
+//     // printf("%d\n",pos); 
+
+//     //rewind让文件指针回到起始位置
+//     rewind(pf);
+//     ch=fgetc(pf);
+//     printf("%c\n",ch);
+
+//     fclose(pf);
+//     pf = NULL;
+// }
+
+
+//文件结束判定
+//feof不是用feof返回值直接用来判断文件的是否结束
+//而是应当文件读取结束的时候,判断读取失败结束,还是遇到文件末尾结束
+//fgetc返回的是EOF说明结束, fgets判断返回值是否为NULL 
+// int main(){
+//     // feof();//EOF- end of file -文件结束标志
+//     FILE* pf=fopen("text.txt","r");
+//     if (pf==NULL)
+//     {
+//         return 0;
+//     }
+//     int ch=fgetc(pf);
+//     printf("%d\n",ch);//-1
+
+//     fclose(pf);
+//     pf=NULL;
+//     return 0;
+// }
+
+// int main(){
+//     //strerror- 把错误码对应的错误信息的字符串地址返回
+//     //printf("%s\n",strerror(errno));
+
+//     //perrror
+//     FILE* pf=fopen("text2.txt","r");//该文件不存在
+//     if (pf==NULL)
+//     {
+//         //更加直观一些perror比strerror更加简便,不需要引头文件,而且perror括号让代码的定制化更强一点
+//         perror("open file text2.txt");
+//         return 0;
+//     }
+//     //读文件
+    
+//     fclose(pf);
+//     pf=NULL;
+//     return 0;
+// }
+
+// int main(){
+
+//     FILE* pf=fopen("text.txt","r");
+//     if (pf==NULL)
+//     {
+//         perror("open file text.txt");
+//         return 0;
+//     }
+//     //读文件
+//     int ch=0;
+//     while ((ch=fgetc(pf))!=EOF)
+//     {
+//        putchar(ch);//打印abcdef
+//     }
+//     if (ferror(pf))//遇到错误结束会返回一个非0值为真,然后打印错误
+//     {
+//         printf("error\n");
+//     }
+//     else if (feof(pf))
+//     {
+//         printf("end of file\n");//遇到了文件结束正常停止
+//     }
+    
+//     fclose(pf);
+//     pf=NULL;
+//     return 0;
+// }
+
+
+// 作业讲解
+// typedef struct{
+//     int a;//0-3  此时偏移位置在4上 
+//     char b;//4  4是char类型的倍数1偏移刚好放进去 此时偏移位置在5
+//     //5
+//     short c;//5不是short的偏移量 浪费掉到6 刚好放进去  2  8 最大为8最小为2 偏移2 6、7 此时偏移位置在8上
+//     //8是short的倍数
+//     short d; //8-9 2
+//     //10-11浪费掉
+// }AA_t;
+typedef struct{
+    double a;//0-7  8  8 
+    short b;//8-9  2 8
+    //10
+    short c;//10-11
+    int d; //12 -15 
+    //16
+   
+}AA_t;
+//占10个字节
+int main(){
+    printf("%lu\n",sizeof(AA_t));
+    return 0;
 }
