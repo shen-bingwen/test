@@ -6,7 +6,11 @@
         "__locale": "c",
         "typeinfo": "c",
         "bitset": "c",
-        "unordered_map": "c"
+        "unordered_map": "c",
+        "limits.h": "c",
+        "float.h": "c",
+        "contact.h": "c",
+        "contact_d.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
