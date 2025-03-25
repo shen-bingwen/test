@@ -552,19 +552,59 @@ extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
 # 500 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
 # 62 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h" 2 3 4
 # 2 "test.c" 2
-# 384 "test.c"
-# 1 "./test.h" 1
-# 24 "./test.h"
-int ADD(int x, int y)
+# 490 "test.c"
+void find_single_dog(int *arr, int sz)
 {
-    return x + y;
+ int i = 0;
+ int ret = 0;
+ int pos = 0;
+ int single_dog[2] = {0};
+
+ for (i = 0; i < sz; i++)
+ {
+  ret ^= arr[i];
+ }
+
+
+ for (i = 0; i < 32; i++)
+ {
+
+  if (((ret >> i) & 1) == 1)
+  {
+   pos = i;
+   break;
+
+
+
+
+
+
+  }
+ }
+
+ for (i = 0; i < sz; i++)
+ {
+  if (((arr[i] >> pos) & 1) == 1)
+  {
+   single_dog[0] ^= arr[i];
+  }
+  else
+  {
+   single_dog[1] ^= arr[i];
+  }
+ }
+ if (single_dog[0] > single_dog[1])
+ {
+  int temp = single_dog[0];
+  single_dog[0] = single_dog[1];
+  single_dog[1] = temp;
+ }
+ printf("%d %d\n", single_dog[0], single_dog[1]);
 }
-# 385 "test.c" 2
-
-
 int main()
 {
-    int ret = ADD(2, 3);
-    printf("ret=%d\n", ret);
-    return 0;
+ int arr[10] = {1, 2, 3, 4, 5, 1, 2, 3, 4, 6};
+ int sz = sizeof(arr) / sizeof(arr[0]);
+ find_single_dog(arr, sz);
+ return 0;
 }

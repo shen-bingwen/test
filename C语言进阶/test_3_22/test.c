@@ -486,45 +486,113 @@
 //     return 0;
 // }
 
+// 函数功能：在包含成对数字的数组中找到两个唯一的"单身狗"数字
+// void find_single_dog(int *arr, int sz)
+// {
+// 	int i = 0;
+// 	int ret = 0;			 // 用于存储全体异或结果
+// 	int pos = 0;			 // 记录不同位的偏移量
+// 	int single_dog[2] = {0}; // 存储找到的两个唯一数字
+// 	// 全体异或操作（核心逻辑1/3）
+// 	for (i = 0; i < sz; i++)
+// 	{
+// 		ret ^= arr[i]; // 最终结果 = 两个唯一数字的异或值
+// 	} // 例如：5^6 = 3（二进制011）
 
+// 	// 寻找不同位（核心逻辑2/3）
+// 	for (i = 0; i < 32; i++)
+// 	{
+// 		// 找到第一个为1的二进制位
+// 		if (((ret >> i) & 1) == 1)
+// 		{
+// 			pos = i; // 记录该位的偏移量
+// 			break;
+// 			// 算法本质需求：
+// 			// 只需要找到任意一个差异位即可将数组正确分组，无需寻找最高位差异位。
+// 			//例如得到011=3 其中1的位置就是5和6的不同的位置.只要按位与1找到其中第一个二进制为1的位置即可
+// 			// 注意：此处没有break，实际会记录最后一个不同的位
+// 			// 例如ret=14(1110)时，最终pos=3（最高位的1）
+// 		}
+// 	}
+// 	// 	// 分组异或（核心逻辑3/3）
+// 	for (i = 0; i < sz; i++)
+// 	{
+// 		if (((arr[i] >> pos) & 1) == 1)
+// 		{							 // 按pos位是否为1分组
+// 			single_dog[0] ^= arr[i]; // 第一组异或（该位为1的数）
+// 		}
+// 		else
+// 		{
+// 			single_dog[1] ^= arr[i]; // 第二组异或（该位为0的数）
+// 		}
+// 	}
+// 	if (single_dog[0] > single_dog[1])
+// 	{ // 🆕 新增排序判断
+// 		int temp = single_dog[0];
+// 		single_dog[0] = single_dog[1];
+// 		single_dog[1] = temp;
+// 	}
+// 	printf("%d %d\n", single_dog[0], single_dog[1]);
+// }
+// int main()
+// {
+// 	int arr[10] = {1, 2, 3, 4, 5, 1, 2, 3, 4, 6}; // 测试数据（6和8是目标）
+// 	int sz = sizeof(arr) / sizeof(arr[0]);		   // 计算数组长度
+// 	find_single_dog(arr, sz);					   // 调用查找函数
+// 	return 0;
+// }
 
-#include<stdio.h>
-void find_single_dog(int* arr, int sz)//找到两个只出现一次的数字
-{
-	int i = 0;
-	int ret = 0;
-	int pos = 0;
-	int single_dog[2] = { 0 };//存放找出来的两个单身狗
-	for (i = 0; i < sz; i++)
-	{
-		ret ^= arr[i];//异或得到的返回值  5^6 011 3
-	}
+#include <stdio.h>
 
-	for (i = 0; i < 32; i++)
-	{
-		if (((ret >> i) & 1) == 1)//那么证明两个数的第i+1位不同
-		{
-			pos = i;//两个单身狗不同的那一位需要偏移的位数  
-		}
-	}
-	for (i = 0; i < sz; i++)
-	{
-		if (((arr[i] >> pos) & 1) == 1)
-		{
-			single_dog[1] ^= arr[i];//异或得到一个单身狗
-		}
-		else
-		{
-			single_dog[0] ^= arr[i];//异或得到第二个单身狗
-		}
-	}
-	printf("%d %d\n", single_dog[0], single_dog[1]);//打印两个单身狗
+// 函数声明
+void findThreeUnique(int arr[], int size);
 
-}
 int main()
 {
-	int arr[10] = { 1,2,3,4,6,1,2,3,4,8 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	find_single_dog(arr, sz);
+	int arr[] = {1, 2, 10, 1, 2, 4, 5};
+	int size = sizeof(arr) / sizeof(arr[0]);
+	findThreeUnique(arr, size);
 	return 0;
+}
+
+// 函数定义
+void findThreeUnique(int arr[], int size)
+{
+	int uniqueElements[size];
+	int uniqueCount = 0;
+	for (int i = 0; i < size; i++)
+	{
+		int isUnique = 1;
+		for (int j = 0; j < size; j++)
+		{
+			if (i != j && arr[i] == arr[j])
+			{
+				isUnique = 0;
+				break;
+			}
+		}
+		if (isUnique)
+		{
+			uniqueElements[uniqueCount++] = arr[i];
+		}
+	}
+	int i = 0;
+	for (i = 0; i < uniqueCount - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < uniqueCount - i - 1; j++)
+		{
+			if (uniqueElements[j] > uniqueElements[j + 1])
+			{
+				int tmp = uniqueElements[j + 1];
+				uniqueElements[j + 1] = uniqueElements[j];
+				uniqueElements[j] = tmp;
+			}
+		}
+	}
+	int printCount = (uniqueCount < 3) ? uniqueCount : 3;
+	for (i = 0; i < printCount; i++)
+	{
+		printf("%d ", uniqueElements[i]);
+	}
 }
